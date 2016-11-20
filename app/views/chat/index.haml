@@ -1,0 +1,61 @@
+.chatspace.clearfix
+  .navbar-left.left
+    .header
+      %p.left chat-ojisan
+      .items.right
+        %a
+          %i.fa.fa-pencil-square-o
+        %a
+          %i.fa.fa-cog
+    .groups
+      %ul
+        %li.list-group
+          %a
+            %p.list-group__name
+              ランチ
+            %p.list-group__message
+              aaaaaaaaaaaaa
+        %li.list-group
+          %a
+            %p.list-group__name
+              TECH::CAMP
+            %p.list-group__message
+              こんにちは！
+  .chat.left
+    .chat-header
+      .header-left.left
+        %p.group-name
+          %h2
+            sampleグループ
+        .members
+          %p
+            Members: chat-ojisan 山田太郎 鈴木次郎
+
+      .header-right.right
+        %a.edit-btn
+          Edit
+    .chat-body
+      %ul.group-info
+        %li
+          .list-header
+            .list-header__name.left
+              kondo
+            .list-header__date.left
+              2016/11/12 00:31:20
+          .list-message
+            おはよう！
+        %li
+          .list-header
+            .list-header__name.left
+              t-kusakabe
+            .list-header__date.left
+              2016/11/12 00:31:20
+          .list-message
+            こんにちは！
+    .chat-footer
+      %form.relative
+        .footer-body.relative
+          %textarea{ placeholder: "type a message", class: "message_body"}
+          %label.footer-file.absolute
+            %i.fa.fa-image
+        %button.absolute Send
