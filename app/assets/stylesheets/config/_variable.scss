@@ -1,8 +1,14 @@
+/*color*/
 $white: #FFF;
-$black: #434A54;
+$color-text-base: #434A54;
 $gray: #DDDDDD;
 $light-gray: #999999;
-$dark-deep-blue: #253141;
-$dark-light-blue: #2F3E51;
-$light-blue: #38AEF0;
-$chat-background-color: #FAFAFA;
+$color-blue-dark: #253141;
+$color-blue-main: #2F3E51;
+$color-blue-bright: #38AEF0;
+$chat-bg-color: #FAFAFA;
+
+/*size*/
+$navbar-width: 300px;
+$header-height: 100px;
+$footer-height: 90px;

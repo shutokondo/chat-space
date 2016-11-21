@@ -1,13 +1,13 @@
 .chatspace.clearfix
   .navbar-left.left
-    .header
+    .navbar-left__user
       %p.left chat-ojisan
       .items.right
         %a
           %i.fa.fa-pencil-square-o
         %a
           %i.fa.fa-cog
-    .groups
+    .navbar-left__groups
       %ul
         %li.list-group
           %a
@@ -23,19 +23,19 @@
               こんにちは！
   .chat.left
     .chat-header
-      .header-left.left
+      .chat-header__left.left
         %p.group-name
           %h2
             sampleグループ
-        .members
+        .chat-header__left__members
           %p
             Members: chat-ojisan 山田太郎 鈴木次郎
 
-      .header-right.right
+      .chat-header__right.right
         %a.edit-btn
           Edit
     .chat-body
-      %ul.group-info
+      %ul.chat-info
         %li
           .list-header
             .list-header__name.left
@@ -56,6 +56,6 @@
       %form.relative
         .footer-body.relative
           %textarea{ placeholder: "type a message", class: "message_body"}
-          %label.footer-file.absolute
+          %label.footer-file.absolute-right
             %i.fa.fa-image
-        %button.absolute Send
+        %input{ type: "submit", value: "Send", class: "absolute-right"}
