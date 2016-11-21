@@ -1,13 +1,13 @@
 .navbar-left {
-  background-color: $dark-light-blue;
+  background-color: $color-blue-main;
   width: 300px;
   height: 100%;
   color: $white;
 
-  .header {
+  &__user {
     height: 100px;
     padding: 20px;
-    background-color: $dark-deep-blue;
+    background-color: $color-blue-dark;
 
     p {
       font-size: 16px;
@@ -25,7 +25,7 @@
     }
   }
 
-  .groups {
+  &__groups {
     padding: 20px;
 
     .list-group {
