@@ -5,7 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.references :group, index: true
 
       ## Recoverable
       t.string   :reset_password_token
