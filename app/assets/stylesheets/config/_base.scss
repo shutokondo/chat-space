@@ -2,14 +2,23 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  background-color: $chat-bg-color
+}
+
 body {
   margin: 0;
   padding: 0;
   display: flex;
 
+  .layout-notification {
+    width: 100%;
+    flex: 1;
+  }
+
   .chatspace {
     height: 100vh;
     min-width: 980px;
-    flex: 1;
   }
 }
