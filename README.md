@@ -5,10 +5,13 @@
 - email
 - password
 - password_confirmation
-- group_id
 
 ### groups
 - name
+
+### group_users
+- user_id
+- group_id
 
 ### messages
 - body
