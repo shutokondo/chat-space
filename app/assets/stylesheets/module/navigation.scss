@@ -1,0 +1,44 @@
+.navbar-left {
+  background-color: $color-blue-main;
+  width: 300px;
+  height: 100%;
+  color: $white;
+
+  &__user {
+    height: 100px;
+    padding: 20px;
+    background-color: $color-blue-dark;
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 60px;
+      letter-spacing: 2px;
+    }
+
+    .items {
+      line-height: 60px;
+
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__groups {
+    padding: 20px;
+
+    .list-group {
+      margin-bottom: 40px;
+
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      &__message {
+        font-size: 11px;
+      }
+    }
+  }
+}

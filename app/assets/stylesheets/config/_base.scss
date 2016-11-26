@@ -1,0 +1,39 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: $chat-bg-color
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  .layout-notification {
+    flex: 1;
+  }
+
+  .layout-notice, .layout-alert {
+    height: 30px;
+    line-height: 30px;
+    color: $white;
+    text-align: center;
+  }
+
+  .layout-notice {
+    background-color: $bg-notice-color;
+  }
+
+  .layout-alert {
+    background-color: $bg-alert-color;
+  }
+
+  .chatspace {
+    height: 100vh;
+    min-width: 980px;
+  }
+}
