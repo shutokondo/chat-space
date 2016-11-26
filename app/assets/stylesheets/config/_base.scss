@@ -1,0 +1,15 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  .chatspace {
+    height: 100vh;
+    min-width: 980px;
+    flex: 1;
+  }
+}
