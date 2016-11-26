@@ -3,9 +3,9 @@
     .navbar-left__user
       %p.left chat-ojisan
       .items.right
-        %a
+        %a.icon-btn
           %i.fa.fa-pencil-square-o
-        %a
+        = link_to edit_user_registration_path, class: 'icon-btn' do
           %i.fa.fa-cog
     .navbar-left__groups
       %ul
