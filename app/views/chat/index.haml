@@ -1,39 +1,19 @@
 .chatspace.clearfix
-  .navbar-left.left
-    .navbar-left__user
-      %p.left chat-ojisan
-      .items.right
-        %a.icon-btn
-          %i.fa.fa-pencil-square-o
-        = link_to edit_user_registration_path, class: 'icon-btn' do
-          %i.fa.fa-cog
-    .navbar-left__groups
-      %ul
-        %li.list-group
-          %a
-            %p.list-group__name
-              ランチ
-            %p.list-group__message
-              aaaaaaaaaaaaa
-        %li.list-group
-          %a
-            %p.list-group__name
-              TECH::CAMP
-            %p.list-group__message
-              こんにちは！
+  = render 'groups/navigation'
   .chat.left
     .chat-header
       .chat-header__left.left
         %p.group-name
           %h2
-            sampleグループ
+            = @group.name
         .chat-header__left__members
           %p
-            Members: chat-ojisan 山田太郎 鈴木次郎
+            Members:
+            - @group.users.each do |user|
+              = user.name
 
       .chat-header__right.right
-        %a.edit-btn
-          Edit
+        = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .chat-body
       %ul.chat-info
         %li
