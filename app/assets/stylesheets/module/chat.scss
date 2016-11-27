@@ -39,27 +39,32 @@
     .chat-info {
       padding: 6px 40px 0 40px;
 
-      .list-header {
-        margin-top: 40px;
-        @include clearfix();
+      li {
+        height: 50px;
 
-        &__name {
-          margin-right: 10px;
-          font-size: 16px;
+        .list-header {
+          height: 30px;
+          line-height: 20px;
+          margin-top: 40px;
+          @include clearfix();
+
+          &__name {
+            margin-right: 10px;
+            font-size: 16px;
+            color: $color-text-base;
+            font-weight: bold;
+          }
+
+          &__date {
+            font-size: 12px;
+            color: $light-gray;
+          }
+        }
+
+        .list-message {
+          font-size: 14px;
           color: $color-text-base;
-          font-weight: bold;
         }
-
-        &__date {
-          font-size: 12px;
-          color: $light-gray;
-        }
-      }
-
-      .list-message {
-        margin-top: 10px;
-        font-size: 14px;
-        color: $color-text-base;
       }
     }
   }
