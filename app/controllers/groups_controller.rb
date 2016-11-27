@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, notice: t('.notice')
+      redirect_to group_messeges_path(@group), notice: t('.notice')
     else
       flash.now[:alert] = t('.alert')
       render :new
@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to group_chat_index_path(@group), notice: t('.notice')
+      redirect_to group_messeges_path(@group), notice: t('.notice')
     else
       flash.now[:alert] = t('.alert')
       render :edit
