@@ -40,6 +40,7 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
@@ -47,7 +48,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'pry-rails'
 end
 
 group :test do
