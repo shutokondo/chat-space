@@ -16,26 +16,19 @@
         = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
     .chat-body
       %ul.chat-info
-        %li
-          .list-header
-            .list-header__name.left
-              kondo
-            .list-header__date.left
-              2016/11/12 00:31:20
-          .list-message
-            おはよう！
-        %li
-          .list-header
-            .list-header__name.left
-              t-kusakabe
-            .list-header__date.left
-              2016/11/12 00:31:20
-          .list-message
-            こんにちは！
+        - @group.messages.each do |message|
+          %li
+            .list-header
+              .list-header__name.left
+                = message.user.name
+              .list-header__date.left
+                = l(message.created_at)
+            .list-message
+              = message.body
     .chat-footer
-      %form.relative
+      = form_for [@group, @message], html: { class: "relative" } do |f|
         .footer-body.relative
-          %textarea{ placeholder: "type a message", class: "message_body"}
-          %label.footer-file.absolute-top-right
+          = f.text_area :body, class: "message_body", placeholder: "type a message"
+          = f.label "", class: "footer-file absolute-top-right" do
             %i.fa.fa-image
-        %input{ type: "submit", value: "Send", class: "submit-btn absolute-top-right"}
+        = f.submit "Send", class: "submit-btn absolute-top-right"

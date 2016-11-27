@@ -7,6 +7,9 @@ ja:
     update:
       notice: "チャットグループを編集しました"
       alert: "チャットグループを編集することができませんでした"
+  messages:
+    create:
+      alert: "メッセージを送信することができませんでした"
   activerecord:
     errors:
       messages:
