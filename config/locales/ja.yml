@@ -1,5 +1,9 @@
 ---
 ja:
+  groups:
+    create:
+      notice: "チャットグループの作成に成功しました"
+      alert: "チャットグループを作成することができませんでした"
   activerecord:
     errors:
       messages:
