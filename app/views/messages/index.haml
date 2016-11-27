@@ -1,0 +1,34 @@
+.chatspace.clearfix
+  = render 'groups/navigation'
+  .chat.left
+    .chat-header
+      .chat-header__left.left
+        %p.group-name
+          %h2
+            = @group.name
+        .chat-header__left__members
+          %p
+            Members:
+            - @group.users.each do |user|
+              = user.name
+
+      .chat-header__right.right
+        = link_to 'Edit', edit_group_path(@group), class: "edit-btn"
+    .chat-body
+      %ul.chat-info
+        - @group.messages.each do |message|
+          %li
+            .list-header
+              .list-header__name.left
+                = message.user.name
+              .list-header__date.left
+                = l(message.created_at)
+            .list-message
+              = message.body
+    .chat-footer
+      = form_for [@group, @message], html: { class: "relative" } do |f|
+        .footer-body.relative
+          = f.text_area :body, class: "message_body", placeholder: "type a message"
+          = f.label "", class: "footer-file absolute-top-right" do
+            %i.fa.fa-image
+        = f.submit "Send", class: "submit-btn absolute-top-right"

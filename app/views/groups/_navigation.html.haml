@@ -10,7 +10,7 @@
     %ul
       - current_user.groups.each do |group|
         %li.list-group
-          = link_to group_chat_index_path(group) do
+          = link_to group_messages_path(group) do
             %p.list-group__name
               = group.name
             %p.list-group__message
