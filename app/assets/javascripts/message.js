@@ -22,12 +22,12 @@ $(function() {
 
   $('#new_message').submit(function(e) {
     e.preventDefault();
-    var $path = $(this)[0].getAttribute('action');
+    var path = $(this)[0].getAttribute('action');
     var $message = $('#message_body').val();
 
     $.ajax({
       type: 'POST',
-      url: $path + '.json',
+      url: path + '.json',
       data: {
         message: {
           body: $message
@@ -44,5 +44,9 @@ $(function() {
     .fail(function(error) {
       alert("エラーが発生しました");
     })
+  });
+
+  $('#message_image').on('change', function() {
+    $(this).parents('#new_message')[0].submit();
   });
 });
