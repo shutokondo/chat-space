@@ -1,7 +1,5 @@
 $(function() {
   function buildHTML(message) {
-    console.log(message);
-    console.log(message.user);
     var html = '<li>' +
       '<div class="list-header">' +
       '<div class="list-header__name left">' +
@@ -14,7 +12,7 @@ $(function() {
       '<div class="list-message">' +
       message.body +
       '</div>' +
-      '</li>'
+      '</li>';
     return html;
   }
 

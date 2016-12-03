@@ -70,6 +70,10 @@
       padding: 10px 15px;
       box-sizing: border-box;
     }
+
+    .chat-group-form__search {
+      @include clearfix();
+    }
   }
 
   .chat-group-user {
@@ -77,6 +81,7 @@
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
+    @include clearfix();
 
     .chat-group-user__name {
       float: left;
@@ -87,12 +92,12 @@
       display: inline-block;
       cursor: pointer;
 
-      &.chat-group-user__btn--add {
-        color: #38aef0;
+      &--add {
+        color: $color-blue-bright;
       }
 
-      &.chat-group-user__btn--remove {
-        color: #f05050;
+      &--remove {
+        color: $color-red-bright;
       }
     }
   }
@@ -101,7 +106,7 @@
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: $color-blue-bright;
     border: 0;
   }
 }
