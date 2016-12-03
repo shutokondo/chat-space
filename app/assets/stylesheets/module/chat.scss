@@ -35,9 +35,10 @@
   .chat-body {
     background-color: $chat-bg-color;
     height: calc(100% - #{$header-height} - #{$footer-height});
+    overflow: scroll;
 
     .chat-info {
-      padding: 6px 40px 0 40px;
+      padding: 0 40px 40px 40px;
 
       li {
         height: 50px;

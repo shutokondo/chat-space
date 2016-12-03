@@ -8,10 +8,22 @@ class MessagesController < ApplicationController
 
   def create
     @message = @group.messages.build(message_params)
-    if @message.save
-      redirect_to group_messages_path(@group)
-    else
-      redirect_to group_messages_path(@group), alert: t('.alert')
+    respond_to do |format|
+      if @message.save
+        format.html do
+          redirect_to group_messages_path(@group)
+        end
+        format.json do
+          render json: @message, include: :user
+        end
+      else
+        format.html do
+          redirect_to group_messages_path(@group), alert: t('.alert')
+        end
+        format.json do
+          render json: @message.errors, status: :unprocessable_entity
+        end
+      end
     end
   end
 
