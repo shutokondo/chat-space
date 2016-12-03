@@ -18,9 +18,9 @@
         = f.label "チャットメンバー", class: 'chat-group-form__label'
       .chat-group-form__field--right
         #chat-group-users
-          #chat-group-user-22.chat-group-user.clearfix
-            %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" }
-            %p{class: "chat-group-user__name"}
+          .chat-group-user.clearfix{id: "chat-group-user-#{current_user.id}"}
+            %input{ name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}" }
+            %p{ class: "chat-group-user__name" }
               = current_user.name
     .chat-group-form__field
       .chat-group-form__field--left
