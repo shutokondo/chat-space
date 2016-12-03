@@ -25,10 +25,13 @@
                 = l(message.created_at)
             .list-message
               = message.body
+              %br
+              = image_tag(message.image.thumb)
     .chat-footer
       = form_for [@group, @message], html: { class: "relative" } do |f|
         .footer-body.relative
           = f.text_area :body, class: "message_body", placeholder: "type a message"
-          = f.label "", class: "footer-file absolute-top-right" do
+          = f.label "", class: "footer-file absolute-top-right", for: "message_image" do
+            = f.file_field :image, id: "message_image"
             %i.fa.fa-image
         = f.submit "Send", class: "submit-btn absolute-top-right"
