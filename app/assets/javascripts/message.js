@@ -1,4 +1,6 @@
 $(function() {
+  var messageNum = 0;
+
   function buildHTML(message) {
     var html = '<li>' +
       '<div class="list-header">' +
@@ -18,6 +20,28 @@ $(function() {
 
   function scrollToBottom() {
     $('.chat-body').scrollTop($('.chat-info').height());
+  }
+
+  function getMessage() {
+    $.ajax({
+      type: 'GET',
+      url: document.location.href + '.json',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      var insertHTML = '';
+      if (messageNum === data.length) {
+      } else {
+        for (var i = messageNum; i < data.length; i++) {
+          insertHTML += buildHTML(data[i]);
+        }
+        $('.chat-info').append(insertHTML);
+        messageNum = data.length
+      }
+    })
+    .fail(function(error) {
+      alert(error);
+    })
   }
 
   $('#new_message').submit(function(e) {
@@ -49,4 +73,10 @@ $(function() {
   $('#message_image').on('change', function() {
     $(this).parents('#new_message')[0].submit();
   });
+
+  messageNum = getMessage(messageNum);
+
+  setInterval(function() {
+    getMessage(messageNum);
+  }, 10000);
 });
